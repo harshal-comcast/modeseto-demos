@@ -1,0 +1,12 @@
+md-toolbar a, md-toolbar span {
+    color: rgba(255,255,255,.87);
+    text-decoration: none;
+}
+
+md-toolbar a::hover {
+    color: #fff;
+}
+
+.fill {
+    flex: 11 auto;
+}

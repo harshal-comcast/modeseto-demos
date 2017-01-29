@@ -1,0 +1,28 @@
+<section>
+    <h3><code>let/var/const</code></h3>
+    <p>classic problem</p>
+    <pre>
+var list = [0, 1, 2, 3, 4, 5];
+var parent = document.getElementById('testElement');
+
+for (var i = 0; i < list.length; i++) {
+    var elem = document.createElement('div');  
+    elem.innerText = 'item ' + list[i];
+	  elem.addEventListener('click', function(){ console.log(i); });
+    parent.appendChild(elem);
+}
+    </pre>
+    <p>
+     Is there a cleaner way to solve this problem? YES - use let instead of var in the for loop!
+     <code>let</code> gives us a fresh binding to <code>i</code> at each iteration, so we have
+     a properly scoped callback.
+    </p>
+    <pre>
+    (function(i) {
+        var elem = document.createElement('div');  
+        elem.innerText = 'item ' + list[i];
+        elem.addEventListener('click', function(){ console.log(i); });
+        parent.appendChild(elem);
+ })(i);
+    </pre>
+</section>
